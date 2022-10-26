@@ -1,0 +1,73 @@
+version: '2'
+
+volumes:
+    db_data:
+        driver: local
+
+services:
+    httpd:
+        build: ./build/httpd
+        links:
+            - php
+        ports:
+            - 80:80
+            - 443:443
+        volumes_from:
+            - app
+
+    php:
+        build: ./build/php
+        ports:
+            - 9000
+            - 9001
+        volumes_from:
+            - app
+        links:
+            - mariadb
+            - mail
+        environment:
+            APPLICATION_ENV: 'development'
+        user: php:staff
+
+    app:
+        image: httpd:2.4.38
+        volumes:
+            - ./code:/var/www/html
+            # - /Users/tobycrain/Development/directedgeprint:/var/www/html/projects/directedgeprint
+            # - /Users/tobycrain/Development/hub:/var/www/html/projects/hub
+            # - /Users/tobycrain/Development/marketplace:/var/www/html/projects/marketplace
+
+    mariadb:
+        image: mariadb:10.7.1
+        volumes:
+            - ./build/data:/docker-entrypoint-initdb.d
+            - db_data:/var/lib/mysql
+        environment:
+            MYSQL_HOST: 'mariadb'
+            MYSQL_ROOT_PASSWORD: 'root'
+            MYSQL_DATABASE: 'root'
+            MYSQL_USER: 'root'
+            MYSQL_PASSWORD: 'root'
+        ports:
+            - 3306:3306
+
+    mail:
+        image: mailhog/mailhog
+        ports:
+            - 1025:1025
+            - 8025:8025
+
+    phpmyadmin:
+        restart: always
+        image: phpmyadmin/phpmyadmin
+        environment:
+            PMA_HOST: 'mariadb'
+            MYSQL_USER: 'root'
+            MYSQL_PASSWORD: 'root'
+            MYSQL_ROOT_PASSWORD: 'root'
+        depends_on:
+            - mariadb
+        ports:
+            - 8080:80
+        links:
+            - mariadb
