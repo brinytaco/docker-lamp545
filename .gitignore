@@ -1,2 +1,4 @@
+data/*
 docker-compose.yml
-code/projects/*
+code/projects*
+code/public/*

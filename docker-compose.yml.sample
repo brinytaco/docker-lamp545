@@ -1,3 +1,4 @@
+# https://hub.docker.com/u/delboy1978uk
 version: '2'
 
 volumes:
@@ -5,16 +6,6 @@ volumes:
         driver: local
 
 services:
-    httpd:
-        build: ./build/httpd
-        links:
-            - php
-        ports:
-            - 80:80
-            - 443:443
-        volumes_from:
-            - app
-
     php:
         build: ./build/php
         ports:
@@ -30,12 +21,13 @@ services:
         user: php:staff
 
     app:
-        image: httpd:2.4.38
+        # image: httpd:2.4.38
         volumes:
             - ./code:/var/www/html
-            # - /Users/tobycrain/Development/directedgeprint:/var/www/html/projects/directedgeprint
-            # - /Users/tobycrain/Development/hub:/var/www/html/projects/hub
-            # - /Users/tobycrain/Development/marketplace:/var/www/html/projects/marketplace
+        build: ./build/httpd
+        ports:
+            - 80:80
+            - 443:443
 
     mariadb:
         image: mariadb:10.7.1
@@ -45,7 +37,6 @@ services:
         environment:
             MYSQL_HOST: 'mariadb'
             MYSQL_ROOT_PASSWORD: 'root'
-            MYSQL_DATABASE: 'root'
             MYSQL_USER: 'root'
             MYSQL_PASSWORD: 'root'
         ports:
@@ -62,9 +53,10 @@ services:
         image: phpmyadmin/phpmyadmin
         environment:
             PMA_HOST: 'mariadb'
+            MYSQL_ROOT_PASSWORD: 'root'
             MYSQL_USER: 'root'
             MYSQL_PASSWORD: 'root'
-            MYSQL_ROOT_PASSWORD: 'root'
+            UPLOAD_LIMIT: 2G
         depends_on:
             - mariadb
         ports:
