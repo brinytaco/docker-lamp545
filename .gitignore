@@ -1,4 +1,5 @@
-data/*
 docker-compose.yml
-code/projects*
-code/public/*
+logs/*
+certs/*
+code/*
+*

@@ -8,31 +8,29 @@ volumes:
 services:
     php:
         build: ./build/php
-        ports:
-            - 9000
-            - 9001
-        volumes_from:
-            - app
+        volumes:
+            - ./directedgeprint:/var/www/html
+            - ./logs:/var/www/logs
+            - ./certs:/var/www/certs
+            - ./build/php/httpd.conf:/etc/apache2/apache2.conf
+            - ./build/php/httpd-vhosts.conf:/etc/apache2/extra/httpd-vhosts.conf
+            - ./build/php/php.ini:/usr/local/etc/php/php.ini
         links:
             - mariadb
             - mail
-        environment:
-            APPLICATION_ENV: 'development'
-        user: php:staff
-
-    app:
-        # image: httpd:2.4.38
-        volumes:
-            - ./code:/var/www/html
-        build: ./build/httpd
         ports:
             - 80:80
             - 443:443
 
+    mail:
+        image: mailhog/mailhog
+        ports:
+            - 1025:1025
+            - 8025:8025
+
     mariadb:
         image: mariadb:10.7.1
         volumes:
-            - ./build/data:/docker-entrypoint-initdb.d
             - db_data:/var/lib/mysql
         environment:
             MYSQL_HOST: 'mariadb'
@@ -42,12 +40,6 @@ services:
         ports:
             - 3306:3306
 
-    mail:
-        image: mailhog/mailhog
-        ports:
-            - 1025:1025
-            - 8025:8025
-
     phpmyadmin:
         restart: always
         image: phpmyadmin/phpmyadmin
@@ -56,7 +48,7 @@ services:
             MYSQL_ROOT_PASSWORD: 'root'
             MYSQL_USER: 'root'
             MYSQL_PASSWORD: 'root'
-            UPLOAD_LIMIT: 2G
+            UPLOAD_LIMIT: 5G
         depends_on:
             - mariadb
         ports:
