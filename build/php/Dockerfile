@@ -1,9 +1,13 @@
+# This installation is for specific Magento < 1.9 Community Edition
 FROM php:5.4-apache
+
+# Update the sources list since "jessie" (Debian 8) release is archived
+COPY ./apt-sources.list /etc/apt/sources.list
 
 COPY ./httpd.conf /etc/apache2/apache2.conf
 COPY ./httpd-vhosts.conf /etc/apache2/extra/httpd-vhosts.conf
 COPY ./php.ini /usr/local/etc/php/php.ini
-    
+
 RUN apt-get update && apt-get -y --no-install-recommends --force-yes install apt-transport-https
 
 # Install Git
@@ -34,7 +38,6 @@ RUN apt-get update && apt-get -y --no-install-recommends --force-yes install fil
 RUN apt-get update && apt-get -y --no-install-recommends --force-yes install mysql-client
 
 # Install PHP extensions
-# docker-php-ext-install
 RUN docker-php-ext-install bcmath
 RUN docker-php-ext-install bz2
 RUN docker-php-ext-install calendar
@@ -44,7 +47,6 @@ RUN docker-php-ext-install dom
 RUN docker-php-ext-install exif
 RUN docker-php-ext-install fileinfo
 RUN docker-php-ext-install gettext
-# RUN docker-php-ext-install gd
 RUN docker-php-ext-install hash
 RUN docker-php-ext-install iconv
 RUN docker-php-ext-install intl
@@ -55,7 +57,7 @@ RUN docker-php-ext-install pcntl
 RUN docker-php-ext-install pdo
 RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-install posix
-RUN docker-php-ext-install redis
+# RUN docker-php-ext-install redis // no longer available in this release
 RUN docker-php-ext-install session
 RUN docker-php-ext-install shmop
 RUN docker-php-ext-install simplexml
