@@ -15,6 +15,13 @@ services:
             - ./build/php/httpd.conf:/etc/apache2/apache2.conf
             - ./build/php/httpd-vhosts.conf:/etc/apache2/extra/httpd-vhosts.conf
             - ./build/php/php.ini:/usr/local/etc/php/php.ini
+        # -----------------------------------------------------------
+        # Enable this `command` line on first run, or run command manually in docker CLI after first compose.
+        # Install rootCA certificate in browser trusted certificates.
+        # Enable `SSLCertificateFile` & `SSLCertificateKeyFile` in httpd-vhosts.conf file.
+        # Restart docker instance after creation/configuration.
+        # -----------------------------------------------------------
+        # command: sh /var/www/certs/generate-certificate.sh localhost
         links:
             - mariadb
             - mail
