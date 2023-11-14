@@ -101,3 +101,7 @@ RUN apt-get update && \
     apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng12-dev && \
     docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
     docker-php-ext-install gd
+
+# Mailhog
+RUN curl -LkSso /usr/bin/mhsendmail 'https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64'&& \
+    chmod 0755 /usr/bin/mhsendmail
