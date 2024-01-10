@@ -35,6 +35,7 @@ RUN apt-get update && apt-get -y --no-install-recommends --force-yes install php
 RUN apt-get update && apt-get -y --no-install-recommends --force-yes install php-pear
 RUN apt-get update && apt-get -y --no-install-recommends --force-yes install openssl
 RUN apt-get update && apt-get -y --no-install-recommends --force-yes install filter
+RUN apt-get update && apt-get -y --no-install-recommends --force-yes install php5-redis
 
 # Add support for command line mysql
 RUN apt-get update && apt-get -y --no-install-recommends --force-yes install mysql-client
@@ -59,7 +60,6 @@ RUN docker-php-ext-install pcntl
 RUN docker-php-ext-install pdo
 RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-install posix
-# RUN docker-php-ext-install redis // no longer available in this release
 RUN docker-php-ext-install session
 RUN docker-php-ext-install shmop
 RUN docker-php-ext-install simplexml
