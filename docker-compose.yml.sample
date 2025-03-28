@@ -1,19 +1,13 @@
-# https://hub.docker.com/u/delboy1978uk
-version: '2'
-
-volumes:
-    db_data:
-        driver: local
 
 services:
-    php:
-        build: ./build/php
+    lamp54:
+        image: brinytaco/linux-php54:magento
         volumes:
-            - ./directedgeprint:/var/www/html
+            - ./projects/directedgeprint:/var/www/projects/directedgeprint
             - ./logs:/var/www/logs
             - ./certs:/var/www/certs
-            - ./build/php/httpd.conf:/etc/apache2/apache2.conf
-            - ./build/php/httpd-vhosts.conf:/etc/apache2/extra/httpd-vhosts.conf
+            - ./build/apache2.conf:/etc/apache2/apache2.conf
+            - ./build/sites-enabled:/etc/apache2/sites-enabled
             - ./build/php/php.ini:/usr/local/etc/php/php.ini
         # -----------------------------------------------------------
         # Enable this `command` line on first run, or run command manually in docker CLI after first compose.
@@ -23,7 +17,7 @@ services:
         # -----------------------------------------------------------
         # command: sh /var/www/certs/generate-certificate.sh localhost
         links:
-            - mariadb
+            - mysql
             - mail
         ports:
             - 80:80
@@ -35,15 +29,13 @@ services:
             - 1025:1025
             - 8025:8025
 
-    mariadb:
-        image: mariadb:10.7.1
+    mysql:
+        image: mysql:5.6
         volumes:
-            - db_data:/var/lib/mysql
+            - mysql_db_data:/var/lib/mysql
         environment:
-            MYSQL_HOST: 'mariadb'
+            MYSQL_HOST: 'mysql'
             MYSQL_ROOT_PASSWORD: 'root'
-            MYSQL_USER: 'root'
-            MYSQL_PASSWORD: 'root'
         ports:
             - 3306:3306
 
@@ -51,14 +43,16 @@ services:
         restart: always
         image: phpmyadmin/phpmyadmin
         environment:
-            PMA_HOST: 'mariadb'
+            PMA_HOST: 'mysql'
             MYSQL_ROOT_PASSWORD: 'root'
-            MYSQL_USER: 'root'
-            MYSQL_PASSWORD: 'root'
             UPLOAD_LIMIT: 5G
         depends_on:
-            - mariadb
+            - mysql
         ports:
             - 8080:80
         links:
-            - mariadb
+            - mysql
+
+
+volumes:
+    mysql_db_data:
