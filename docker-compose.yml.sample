@@ -3,19 +3,13 @@ services:
     lamp54:
         image: brinytaco/linux-php54:magento
         volumes:
-            - ./projects/directedgeprint:/var/www/projects/directedgeprint
+            - ./projects/directedgeprint:/var/www/html
             - ./logs:/var/www/logs
+            - ./build/apache2/logs:/var/log/apache2
             - ./certs:/var/www/certs
-            - ./build/apache2.conf:/etc/apache2/apache2.conf
+            # - ./build/apache2/apache2.conf:/etc/apache2/apache2.conf
+            # - ./build/apache2/php.ini:/etc/php5/apache2/php.ini
             - ./build/sites-enabled:/etc/apache2/sites-enabled
-            - ./build/php/php.ini:/usr/local/etc/php/php.ini
-        # -----------------------------------------------------------
-        # Enable this `command` line on first run, or run command manually in docker CLI after first compose.
-        # Install rootCA certificate in browser trusted certificates.
-        # Enable `SSLCertificateFile` & `SSLCertificateKeyFile` in httpd-vhosts.conf file.
-        # Restart docker instance after creation/configuration.
-        # -----------------------------------------------------------
-        # command: sh /var/www/certs/generate-certificate.sh localhost
         links:
             - mysql
             - mail

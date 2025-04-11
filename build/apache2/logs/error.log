@@ -1,0 +1,107 @@
+[Fri Apr 11 17:16:39.044474 2025] [core:warn] [pid 8] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Apr 11 17:16:39.049246 2025] [mpm_prefork:notice] [pid 8] AH00163: Apache/2.4.10 (Debian) PHP/5.4.45 OpenSSL/1.0.2l configured -- resuming normal operations
+[Fri Apr 11 17:16:39.049734 2025] [core:notice] [pid 8] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Fri Apr 11 17:16:46.776852 2025] [core:alert] [pid 9] [client 192.168.65.1:35343] /var/www/html/.htaccess: Invalid command 'Header', perhaps misspelled or defined by a module not included in the server configuration
+[Fri Apr 11 17:16:46.839705 2025] [core:alert] [pid 10] [client 192.168.65.1:37975] /var/www/html/.htaccess: Invalid command 'Header', perhaps misspelled or defined by a module not included in the server configuration, referer: https://localhost/
+[Fri Apr 11 17:31:39.731659 2025] [core:warn] [pid 8] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Apr 11 17:31:39.736844 2025] [mpm_prefork:notice] [pid 8] AH00163: Apache/2.4.10 (Debian) PHP/5.4.45 OpenSSL/1.0.2l configured -- resuming normal operations
+[Fri Apr 11 17:31:39.737302 2025] [core:notice] [pid 8] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Fri Apr 11 17:36:55.846373 2025] [mpm_prefork:notice] [pid 8] AH00169: caught SIGTERM, shutting down
+[Fri Apr 11 17:39:49.498330 2025] [core:warn] [pid 8] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Apr 11 17:39:49.503587 2025] [mpm_prefork:notice] [pid 8] AH00163: Apache/2.4.10 (Debian) PHP/5.4.45 OpenSSL/1.0.2l configured -- resuming normal operations
+[Fri Apr 11 17:39:49.504165 2025] [core:notice] [pid 8] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Fri Apr 11 17:40:05.711816 2025] [core:alert] [pid 9] [client 192.168.65.1:30410] /var/www/html/.htaccess: Invalid command 'Header', perhaps misspelled or defined by a module not included in the server configuration
+[Fri Apr 11 17:40:05.728066 2025] [core:alert] [pid 10] [client 192.168.65.1:59903] /var/www/html/.htaccess: Invalid command 'Header', perhaps misspelled or defined by a module not included in the server configuration, referer: https://localhost/
+[Fri Apr 11 17:40:06.632916 2025] [core:alert] [pid 12] [client 192.168.65.1:53170] /var/www/html/.htaccess: Invalid command 'Header', perhaps misspelled or defined by a module not included in the server configuration
+[Fri Apr 11 17:40:06.649017 2025] [core:alert] [pid 11] [client 192.168.65.1:60532] /var/www/html/.htaccess: Invalid command 'Header', perhaps misspelled or defined by a module not included in the server configuration, referer: https://localhost/
+Failed loading opcache.so:  opcache.so: cannot open shared object file: No such file or directory
+PHP Warning:  PHP Startup: gd: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: imagick: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: json: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: mcrypt: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: mysql: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: mysqli: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: PDFlib: Unable to initialize module\nModule compiled with module API=20151012\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: PDO: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: pdo_mysql: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: xmlrpc: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: xsl: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+[Fri Apr 11 17:41:39.616997 2025] [core:warn] [pid 8] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Apr 11 17:41:39.622295 2025] [mpm_prefork:notice] [pid 8] AH00163: Apache/2.4.10 (Debian) PHP/5.4.45 OpenSSL/1.0.2l configured -- resuming normal operations
+[Fri Apr 11 17:41:39.622765 2025] [core:notice] [pid 8] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+PHP:  syntax error, unexpected '=' in /usr/local/etc/php/conf.d/opcache.ini on line 1
+Failed loading /usr/lib/php5/20100525/opcache.so     opcache.memory_consumption:  /usr/lib/php5/20100525/opcache.so     opcache.memory_consumption: cannot open shared object file: No such file or directory
+PHP Warning:  PHP Startup: gd: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: gdcm: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: imagick: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: json: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: mcrypt: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: mysql: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: mysqli: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: PDFlib: Unable to initialize module\nModule compiled with module API=20151012\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: PDO: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: pdo_mysql: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: xmlrpc: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: xsl: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+[Fri Apr 11 17:54:13.684986 2025] [core:warn] [pid 8] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Apr 11 17:54:13.690688 2025] [mpm_prefork:notice] [pid 8] AH00163: Apache/2.4.10 (Debian) PHP/5.4.45 OpenSSL/1.0.2l configured -- resuming normal operations
+[Fri Apr 11 17:54:13.691656 2025] [core:notice] [pid 8] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+Failed loading opcache.so:  opcache.so: cannot open shared object file: No such file or directory
+PHP Warning:  PHP Startup: gd: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: gdcm: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: imagick: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: json: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: mcrypt: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: mysql: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: mysqli: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: PDFlib: Unable to initialize module\nModule compiled with module API=20151012\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: PDO: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: pdo_mysql: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: xmlrpc: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: xsl: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+[Fri Apr 11 17:56:24.834197 2025] [core:warn] [pid 8] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Apr 11 17:56:24.839541 2025] [mpm_prefork:notice] [pid 8] AH00163: Apache/2.4.10 (Debian) PHP/5.4.45 OpenSSL/1.0.2l configured -- resuming normal operations
+[Fri Apr 11 17:56:24.839987 2025] [core:notice] [pid 8] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+Failed loading opcache.so:  opcache.so: cannot open shared object file: No such file or directory
+PHP Warning:  PHP Startup: gd: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: imagick: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: json: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: mcrypt: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: mysql: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: mysqli: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: PDFlib: Unable to initialize module\nModule compiled with module API=20151012\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: PDO: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: pdo_mysql: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: readline: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: xmlrpc: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: xsl: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+[Fri Apr 11 18:49:01.104943 2025] [core:warn] [pid 8] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Apr 11 18:49:01.110732 2025] [mpm_prefork:notice] [pid 8] AH00163: Apache/2.4.10 (Debian) PHP/5.4.45 OpenSSL/1.0.2l configured -- resuming normal operations
+[Fri Apr 11 18:49:01.111779 2025] [core:notice] [pid 8] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Fri Apr 11 22:39:20.498075 2025] [core:warn] [pid 8] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Apr 11 22:39:20.504094 2025] [mpm_prefork:notice] [pid 8] AH00163: Apache/2.4.10 (Debian) PHP/5.4.45 OpenSSL/1.0.2l configured -- resuming normal operations
+[Fri Apr 11 22:39:20.504791 2025] [core:notice] [pid 8] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Fri Apr 11 22:44:52.742326 2025] [core:warn] [pid 8] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Apr 11 22:44:52.747399 2025] [mpm_prefork:notice] [pid 8] AH00163: Apache/2.4.10 (Debian) PHP/5.4.45 OpenSSL/1.0.2l configured -- resuming normal operations
+[Fri Apr 11 22:44:52.748065 2025] [core:notice] [pid 8] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+PHP:  syntax error, unexpected '=' in /usr/local/etc/php/conf.d/opcache.ini on line 1
+Failed loading /usr/lib/php5/20100525/opcache.so     opcache.memory_consumption:  /usr/lib/php5/20100525/opcache.so     opcache.memory_consumption: cannot open shared object file: No such file or directory
+PHP Warning:  PHP Startup: json: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: PDFlib: Unable to initialize module\nModule compiled with module API=20151012\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: PDO: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: readline: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+[Fri Apr 11 22:50:47.099079 2025] [core:warn] [pid 8] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Apr 11 22:50:47.104678 2025] [mpm_prefork:notice] [pid 8] AH00163: Apache/2.4.10 (Debian) PHP/5.4.45 OpenSSL/1.0.2l configured -- resuming normal operations
+[Fri Apr 11 22:50:47.105091 2025] [core:notice] [pid 8] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Fri Apr 11 22:52:19.018953 2025] [mpm_prefork:notice] [pid 8] AH00169: caught SIGTERM, shutting down
+PHP:  syntax error, unexpected '=' in /usr/local/etc/php/conf.d/opcache.ini on line 1
+Failed loading /usr/lib/php5/20100525/opcache.so     opcache.memory_consumption:  /usr/lib/php5/20100525/opcache.so     opcache.memory_consumption: cannot open shared object file: No such file or directory
+PHP Warning:  PHP Startup: json: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: PDFlib: Unable to initialize module\nModule compiled with module API=20151012\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: PDO: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+PHP Warning:  PHP Startup: readline: Unable to initialize module\nModule compiled with module API=20131226\nPHP    compiled with module API=20100525\nThese options need to match\n in Unknown on line 0
+[Fri Apr 11 22:52:41.244649 2025] [core:warn] [pid 8] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Apr 11 22:52:41.249380 2025] [mpm_prefork:notice] [pid 8] AH00163: Apache/2.4.10 (Debian) PHP/5.4.45 OpenSSL/1.0.2l configured -- resuming normal operations
+[Fri Apr 11 22:52:41.249812 2025] [core:notice] [pid 8] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Fri Apr 11 23:00:15.846516 2025] [core:alert] [pid 10] [client 192.168.65.1:59192] /var/www/html/.htaccess: Invalid command 'Header', perhaps misspelled or defined by a module not included in the server configuration
+[Fri Apr 11 23:00:15.892823 2025] [core:alert] [pid 9] [client 192.168.65.1:63062] /var/www/html/.htaccess: Invalid command 'Header', perhaps misspelled or defined by a module not included in the server configuration, referer: https://localhost/
