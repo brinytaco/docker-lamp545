@@ -1,5 +1,3 @@
-# https://hub.docker.com/u/delboy1978uk
-version: '2'
 
 volumes:
     db_data:
@@ -7,7 +5,10 @@ volumes:
 
 services:
     php:
-        build: ./build/php
+        build:
+            context: ./build/php
+            dockerfile: Dockerfile
+        image: lamp-php54-apc:latest
         volumes:
             - ./directedgeprint:/var/www/html
             - ./logs:/var/www/logs
@@ -23,11 +24,18 @@ services:
         # -----------------------------------------------------------
         # command: sh /var/www/certs/generate-certificate.sh localhost
         links:
-            - mariadb
-            - mail
+            - mysql
         ports:
             - 80:80
             - 443:443
+        deploy:
+            resources:
+                limits:
+                    cpus: '2'
+                    memory: 1G
+                reservations:
+                    cpus: '1'
+                    memory: 512M
 
     mail:
         image: mailhog/mailhog
@@ -35,30 +43,66 @@ services:
             - 1025:1025
             - 8025:8025
 
-    mariadb:
-        image: mariadb:10.7.1
+    mysql:
+        image: mysql:5.6
+        container_name: mysql
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: root
         volumes:
             - db_data:/var/lib/mysql
-        environment:
-            MYSQL_HOST: 'mariadb'
-            MYSQL_ROOT_PASSWORD: 'root'
-            MYSQL_USER: 'root'
-            MYSQL_PASSWORD: 'root'
-        ports:
-            - 3306:3306
+        command:
+            [
+                "--max_allowed_packet=64M",
+                "--innodb_buffer_pool_size=4G",
+                "--innodb_buffer_pool_instances=4",
+                "--tmp_table_size=512M",
+                "--max_heap_table_size=512M",
+                "--innodb_log_file_size=512M",
+                "--innodb_log_buffer_size=128M",
+                "--innodb_flush_log_at_trx_commit=2",
+                "--innodb_file_per_table=1",
+                "--innodb_flush_method=O_DIRECT",
+                "--innodb_read_io_threads=8",
+                "--innodb_write_io_threads=8",
+                "--performance_schema=ON",
+                "--max_connections=150",
+                "--query_cache_type=1",
+                "--query_cache_size=256M",
+                "--query_cache_limit=2M",
+                "--thread_cache_size=50",
+                "--table_open_cache=4096",
+                "--table_definition_cache=2048",
+                "--sort_buffer_size=2M",
+                "--join_buffer_size=2M",
+                "--read_buffer_size=1M",
+                "--read_rnd_buffer_size=2M",
+                "--key_buffer_size=256M",
+                "--wait_timeout=600",
+                "--interactive_timeout=600",
+                "--connect_timeout=30"
+            ]
+        restart: unless-stopped
+        deploy:
+            resources:
+                limits:
+                    cpus: '4'
+                    memory: 6G
+                reservations:
+                    cpus: '2'
+                    memory: 4G
 
     phpmyadmin:
         restart: always
         image: phpmyadmin/phpmyadmin
         environment:
-            PMA_HOST: 'mariadb'
+            PMA_HOST: mysql
             MYSQL_ROOT_PASSWORD: 'root'
-            MYSQL_USER: 'root'
-            MYSQL_PASSWORD: 'root'
             UPLOAD_LIMIT: 5G
         depends_on:
-            - mariadb
+            - mysql
         ports:
             - 8080:80
         links:
-            - mariadb
+            - mysql
